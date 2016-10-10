@@ -1,4 +1,6 @@
 class DepartmentsUsersController < ApplicationController
+  before_filter :authorize
+  
   
   def new
     

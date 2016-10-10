@@ -1,4 +1,6 @@
 class TimeSheetsController < ApplicationController
+  before_filter :authorize
+  
   
   def import
    # raise params[:file1].inspect

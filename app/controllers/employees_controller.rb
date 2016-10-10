@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
- 
+  before_filter :authorize
+  
   def import
     if params[:file]
    

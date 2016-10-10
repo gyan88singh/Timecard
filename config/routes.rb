@@ -76,8 +76,11 @@ Rails.application.routes.draw do
   end
  
   resources :sessions do
-         get "new"
-         get "index"
+          get '/login' => 'sessions#new'
+          post '/login' => 'sessions#create'
+          get "index"
+         
+          post "new"
          
     end
      
@@ -111,7 +114,7 @@ Rails.application.routes.draw do
     end  
      
  # root :to => "users#index"
-  root :to => "sessions#new"
+ root :to => "sessions#new"
  # root :to => "logins#new"
   #resources :users
  # resources :sessions

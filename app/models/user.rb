@@ -35,16 +35,18 @@ class User < ActiveRecord::Base
   }
   
   
-  def self.domain_authenticates(username)
+  def self.domain_authenticates(username,password)
     
       ldap = Net::LDAP.new :host => SERVER,:port => PORT, :base => BASE, :domain => DOMAIN,:auth => {
                                                                                            :method => :simple,
-                                                                                           :username =>'suhas.dabhade@tandon.local',
-                                                                                           :password => 'Infinx@10'
+                                                                                           :username => username,
+                                                                                           :password => password
                                                                                            }
           
                             
-      if ldap.bind and user = ldap.search(:filter => "sAMAccountName=#{username}")
+      if ldap.bind 
+        
+       # and user = ldap.search(:filter => "sAMAccountName=#{username}")
        
               # Redundant? Sure - the code will be 0 and the message will be "Success".
         puts "Connection successful!  Code:  #{ldap.get_operation_result.code}, message: #{ldap.get_operation_result.message}"
