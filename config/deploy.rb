@@ -2,7 +2,7 @@
 lock '3.4.1'
 
 set :application, 'Timecard'
-set :repo_url, 'git@github.com:gyan88singh/Timecard.git'
+set :repo_url, 'https://github.com/gyan88singh/Timecard.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -29,8 +29,8 @@ set :repo_url, 'git@github.com:gyan88singh/Timecard.git'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+#set :linked_files, %w{config/database.yml}
+#set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
  
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
